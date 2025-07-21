@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Private Journal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1509228627152-72ae9ae6848a?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Cedarville Cursive', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: rgba(10, 20, 10, 0.8);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.85);
+      width: 90%;
+      max-width: 800px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 70vh;
+      background-color: transparent;
+      color: #e5e5e5;
+      border: none;
+      font-size: 1.1rem;
+      resize: vertical;
+      padding: 10px;
+      outline: none;
+    }
+
+    .hidden-message {
+      display: none;
+      margin-top: 10px;
+      color: #ffffff;
+      font-size: 1rem;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <textarea id="journal" placeholder="This space is yours to write whatever you need for only your eyes."></textarea>
+    <div class="hidden-message" id="message">you’re enough Sy, always</div>
+  </div>
+
+  <script>
+    const textarea = document.getElementById("journal");
+    const message = document.getElementById("message");
+
+    textarea.addEventListener("input", () => {
+      if (textarea.value.length > 10) {
+        message.style.display = "block";
+      } else {
+        message.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
